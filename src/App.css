@@ -1,0 +1,13 @@
+.cardsmovie {
+margin-top: 25px;
+margin-bottom: 25px;
+margin-right: 25px;
+margin-left: 25px;
+display: flex;
+flex-wrap: wrap;
+justify-content: space-evenly;
+
+}
+.title1{
+font-weight: bolder;
+}
