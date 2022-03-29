@@ -1,6 +1,7 @@
 import {Card,Button} from 'react-bootstrap';
 import Star from './Star';
 import ReactStars from "react-rating-stars-component";
+import { Link } from 'react-router-dom';
 
 const MovieCard = ({movie}) => {
  
@@ -12,7 +13,7 @@ const MovieCard = ({movie}) => {
   <Card.Text>
   {movie.description}
   </Card.Text>
-  <Button  variant="primary">Watch it</Button>
+  <Button  variant="primary" as={Link} to={`/MoviePage/${movie.id}`}>Watch it</Button>
   {/* <Star rate={movie.rate} /> */}
   {/* <ReactStars
     count={5}

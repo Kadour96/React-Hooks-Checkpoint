@@ -15,6 +15,7 @@ import {useState} from "react";
     );
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+    
     return (
   
       <>
@@ -60,6 +61,16 @@ import {useState} from "react";
           </Form.Label>
           <Col>
           <Form.Control  onChange={e=>setMovie({...movie,rate:e.target.value})}  type="text" placeholder="Rate" />
+          </Col>
+          </Row>
+          <br/>
+          <Row>
+          <Form.Label  column lg={2}>
+           Id
+          </Form.Label>
+          <Col>
+          <Form.Control    defaultValue={0}
+         onChange={e=>setMovie({...movie,id:e.target.value})}  type="text" placeholder="Id" />
           </Col>
           </Row>
           </Modal.Body>

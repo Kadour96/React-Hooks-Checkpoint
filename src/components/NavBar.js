@@ -1,14 +1,20 @@
 import {Navbar,Container,Nav,Form,Button,NavDropdown,FormControl,Input } from 'react-bootstrap';
 import ReactStars from "react-rating-stars-component";
+import { Link, Route, Routes } from 'react-router-dom';
+import Exemple from './Exemple';
+import MoviePage from './MoviePage';
 
-const NavBar = ({setName,setRating}) => {
+const NavBar = ({setName,setRating,addMovie}) => {
   const ratingChanged = (newRating) => {
     setRating(newRating);
   };
     return (
+      <div>
+
+    
   <Navbar bg="light" expand="lg">
   <Container fluid>
-    <Navbar.Brand href=""><img src="TuniFILM.png"style={{width:"120px", height:"50px"}}/></Navbar.Brand>
+    <Navbar.Brand as={Link} to='/'><img src="TuniFILM.png"style={{width:"120px", height:"50px"}}/></Navbar.Brand>
     <Navbar.Toggle aria-controls="navbarScroll" />
     <Navbar.Collapse id="navbarScroll">
       <Nav
@@ -16,7 +22,7 @@ const NavBar = ({setName,setRating}) => {
         style={{ maxHeight: '100px' }}
         navbarScroll
       >
-        <Nav.Link href="" >Box Office</Nav.Link>
+        <Nav.Link >Trailer</Nav.Link>
         <NavDropdown title="Movies" id="navbarScrollingDropdown">
           <NavDropdown.Item href="#action3">Action Movies</NavDropdown.Item>
           <NavDropdown.Item href="#action4">Trend Movies</NavDropdown.Item>
@@ -25,7 +31,7 @@ const NavBar = ({setName,setRating}) => {
             Best 2021
           </NavDropdown.Item>
         </NavDropdown>
-       
+       <Exemple addMovie={addMovie}/>
       </Nav>
       <ReactStars
     count={5}
@@ -48,6 +54,8 @@ const NavBar = ({setName,setRating}) => {
   </Container>
 
 </Navbar>
+
+</div>
 
     );
    };
